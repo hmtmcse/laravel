@@ -16,9 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
-Route::get('/login', [AuthenticationController::class, 'login']);
+Route::get('/login', [AuthenticationController::class, 'login'])->name('login');
 Route::post('/login', [AuthenticationController::class, 'doLogin']);
 Route::get('/logout', [AuthenticationController::class, 'logout']);
+Route::get('/init', [AuthenticationController::class, 'init']);
 
 Route::get('/', function () {
     return view('welcome');
